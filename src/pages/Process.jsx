@@ -4,11 +4,9 @@ import { steps } from "../Data/info";
 import BannerImage from "../assets/Bannerimage.jpg";
 const Process = () => {
   return (
+    <>
     <div>
-       <div
-      className="h-[70vh] w-full bg-center bg-cover bg-fixed flex items-center justify-center"
-      style={{ backgroundImage: `url(${BannerImage})` }}
-    >
+        <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
     
     </div>
     <section className="mx-auto max-w-7xl">
@@ -31,7 +29,8 @@ const Process = () => {
         ))}
       </div>
       </section>
-    </div>
+    
+    </>
   );
 };
 

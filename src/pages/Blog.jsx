@@ -81,12 +81,7 @@ single large indoor plant, can add personality to a room while remaining simple.
   return (
     <>
     <div>
-        <div
-              className="h-[70vh] w-full bg-center bg-cover bg-fixed flex items-center justify-center"
-              style={{ backgroundImage: `url(${BannerImage})` }}
-            >
-            
-            </div>
+        <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
             <div>
                  <section className="py-20 max-w-7xl mx-auto">
           <h1 className="text-slate-900 lg:text-5xl text-4xl font-bold text-center mb-16 font-lato">

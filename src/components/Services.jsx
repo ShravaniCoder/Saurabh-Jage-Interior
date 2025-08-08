@@ -12,10 +12,8 @@ const Services = () => {
 
   return (
     <>
-     <div
-                    className="h-[70vh] w-full bg-center bg-cover bg-fixed flex items-center justify-center"
-                    style={{ backgroundImage: `url(${BannerImage})` }}
-                  >
+     <div>
+                    <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
                   
                   </div>
     <div id="services" className="bg-[#f7f7f7] px-10 py-20">
