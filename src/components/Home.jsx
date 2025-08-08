@@ -42,11 +42,7 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-[4vw] md:pt-36 text-white">
-        <div className="flex justify-start">
-          <span className="uppercase text-sm tracking-widest text-[#d3b54a] border border-[#d3b54a] rounded-full px-4 py-1 inline-block w-auto backdrop-blur-md">
-            Fast and Reliable
-          </span>
-        </div>
+       
 
         <h1 className="text-4xl font-marcellus-sc-regular md:text-8xl font-extrabold leading-tight mb-6">
           Luxury Interiors,<br />Tailored for You
