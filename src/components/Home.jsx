@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 // Your background images
-import Img1 from "../assets/home.jpg";
+import Img1 from "../assets/Home3.jpg";
 import Img2 from "../assets/home2.jpg";
+import Img3 from "../assets/home.jpg";
+import Img4 from "../assets/home4.jpg";
+import Img5 from "../assets/Home5.jpg";
 
-
-const images = [Img1, Img2];
+const images = [Img1, Img2, Img3, Img4, Img5];
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
@@ -42,24 +44,20 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-[4vw] md:pt-36 text-white">
-       
-
         <h1 className="text-4xl font-marcellus-sc-regular md:text-8xl font-extrabold leading-tight mb-6">
-          Luxury Interiors,<br />Tailored for You
+          Luxury Interiors,
+          <br />
+          Tailored for You
         </h1>
 
         <div className="md:px-[14vw] px-4">
-          <p className="max-w-md font-inter text-lg font-semibold mb-8">
-            Whether it’s your home, office, or a commercial project, we are always dedicated to bringing your vision to life.
+          <p className="max-w-md font-spectral-sc-regular text-lg font-semibold mb-8">
+            We specialize in delivering turnkey solutions for apartments,
+            villas, and commercial spaces, backed by a team of expert designers
+            and artisans.
           </p>
-
-         
         </div>
       </div>
-
-     
-
-      
     </section>
   );
 };
