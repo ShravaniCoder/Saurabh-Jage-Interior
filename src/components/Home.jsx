@@ -40,7 +40,7 @@ const HeroSection = () => {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10" />
 
       {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-[4vw] md:pt-36 text-white">
