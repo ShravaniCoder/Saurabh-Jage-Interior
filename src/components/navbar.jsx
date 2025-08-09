@@ -78,9 +78,7 @@ const Navbar = () => {
                 <h2 className="font-semibold">(+91) 99873 57338</h2>
               </div>
             </div>
-            <button className='w-full py-3 rounded-full font-semibold bg-[#d3b54a] hover:bg-black hover:text-white transition'>
-              Get A Quote
-            </button>
+           
           </div>
         </div>
       )}
