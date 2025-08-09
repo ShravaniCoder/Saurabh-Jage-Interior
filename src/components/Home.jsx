@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[50vh] md:h-screen overflow-hidden">
+    <section className="relative w-full h-[50vh] md:h-[98vh] overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <AnimatePresence>
