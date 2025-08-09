@@ -31,14 +31,16 @@ const ExperienceSection = () => {
         <div className="mb-3 text-sm font-bold font-spectral-sc-regular text-[#d3b54a] tracking-wide uppercase">
           • Who we are •
         </div>
-        <h2 className="text-4xl font-anton-text md:text-5xl font-bold text-gray-900">
-          Experience <span className="text-[#d3b54a]">The Art Of Interior</span>{" "}
-          Design
+        <h2 className="text-4xl font-nata-sans md:text-5xl font-bold text-gray-900">
+          <span className="text-[#d3b54a]"> “Marbelling </span>Homes,
+          <span className="text-[#d3b54a]"> Marbelling </span>Lives”
         </h2>
-        <p className="mt-5 text-gray-600 max-w-2xl mx-auto">
-          We specialize in transforming visions into reality. Explore our
-          portfolio of innovative architectural and interior design projects
-          crafted with precision.
+        <p className="mt-5 font-montserrat font-medium text-gray-600 max-w-2xl mx-auto">
+          Saurabh Jage Interiors is a dynamic and rapidly expanding interior
+          design firm known for creating elegant, personalized, and functional
+          spaces throughout India. With a rapidly expanding presence in Mumbai,
+          we combine refined aesthetics, meticulous planning, and exceptional
+          execution.
         </p>
 
         {/* Services Grid */}
