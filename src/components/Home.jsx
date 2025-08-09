@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[50vh] md:h-screen overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <AnimatePresence>
@@ -44,14 +44,14 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-[4vw] md:pt-36 text-white">
-        <h1 className="text-4xl font-marcellus-sc-regular md:text-8xl font-extrabold leading-tight mb-6">
+        <h1 className="text-3xl md:mt-0 mt-5 font-marcellus-sc-regular md:text-8xl font-extrabold leading-tight mb-6">
           Luxury Interiors,
           <br />
           Tailored for You
         </h1>
 
         <div className="md:px-[14vw] px-4">
-          <p className="max-w-md font-spectral-sc-regular text-lg font-semibold mb-8">
+          <p className="max-w-md font-spectral-sc-regular text-base  md:text-lg font-semibold mb-8">
             We specialize in delivering turnkey solutions for apartments,
             villas, and commercial spaces, backed by a team of expert designers
             and artisans.

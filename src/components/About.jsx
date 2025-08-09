@@ -23,7 +23,7 @@ const services = [
 
 const ExperienceSection = () => {
   return (
-    <div className="relative bg-white py-20 px-4 md:px-10 lg:px-24 overflow-hidden">
+    <div className="relative bg-white py-20  overflow-hidden">
       {/* Architectural wireframe background */}
       <div className="absolute inset-0 bg-[url('/wireframe-bg.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
 
@@ -31,11 +31,11 @@ const ExperienceSection = () => {
         <div className="mb-3 text-sm font-bold font-spectral-sc-regular text-[#d3b54a] tracking-wide uppercase">
           • Who we are •
         </div>
-        <h2 className="text-4xl font-nata-sans md:text-5xl font-bold text-gray-900">
-          <span className="text-[#d3b54a]"> “Marbelling </span>Homes,
+        <h2 className="text-3xl font-nata-sans md:text-5xl font-bold text-gray-900">
+          “<span className="text-[#d3b54a]">Marbelling </span>Homes,
           <span className="text-[#d3b54a]"> Marbelling </span>Lives”
         </h2>
-        <p className="mt-5 font-montserrat font-medium text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-5 px-4 font-montserrat font-medium text-gray-600 max-w-2xl mx-auto">
           Saurabh Jage Interiors is a dynamic and rapidly expanding interior
           design firm known for creating elegant, personalized, and functional
           spaces throughout India. With a rapidly expanding presence in Mumbai,
@@ -43,24 +43,43 @@ const ExperienceSection = () => {
           execution.
         </p>
 
-        {/* Services Grid */}
-        <div className="mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="flex justify-between items-center gap-3 mb-16">
-                <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
-                  {service.title}
-                </h3>
+        {/* Services Section */}
+        <div
+          className="mt-20 py-16 px-4 md:px-10 lg:px-24"
+          style={{
+            background: `linear-gradient(to bottom, #D6B246 50%, white 50%)`,
+          }}
+        >
+          {/* Text */}
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-spectral-sc-regular font-bold text-white mb-4">
+              Our Offerings
+            </h2>
+            <p className="text-white font-montserrat font-semibold max-w-2xl mx-auto">
+              Every project we undertake speaks luxury & functionality which is
+              uniquely yours.
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all"
+              >
+                <div className="flex justify-between items-center gap-3 mb-16">
+                  <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
+                    {service.title}
+                  </h3>
+                </div>
+                <hr className="text-gray-300" />
+                <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
+                  {service.desc}
+                </p>
               </div>
-              <hr className="text-gray-300" />
-              <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
-                {service.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
