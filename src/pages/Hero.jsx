@@ -3,6 +3,7 @@ import HeroSection from '../components/Home';
 import ExperienceSection from '../components/About';
 import Services from '../components/Services';
 import ProcessSection from '../components/Process';
+import WhyChoose from '../components/WhyChoose';
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
     <HeroSection />
     <ExperienceSection />
     <Services />
-   
+    <WhyChoose />
     </>
   )
 }
