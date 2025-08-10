@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BannerImage from "../assets/Bannerimage.jpg";
+import Banner from "../assets/blogsbanner.jpg";
 import Dropdown from '../components/Dropdown';
 
 const Blog = () => {
@@ -80,13 +80,21 @@ single large indoor plant, can add personality to a room while remaining simple.
   ];
   return (
     <>
-    <div>
-        <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
-            <div>
-                 <section className="py-20 max-w-7xl mx-auto">
-          <h1 className="text-slate-900 lg:text-5xl text-4xl font-bold text-center mb-16 font-lato">
-            Our Blogs
-          </h1>
+    <div className="relative h-[55vh] w-full">
+              <img
+                src={Banner}
+                alt="Banner"
+                className="absolute inset-0 object-cover object-center blur-xs h-full w-full"
+              />
+              <div className="absolute inset-0 bg-white/10"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                <h2 className="text-4xl md:text-5xl font-spectral-sc-regular font-bold text-white mb-4">
+                  Our Blogs
+                </h2>
+              </div>
+      </div>
+          <section className="py-20 px-6 max-w-7xl mx-auto">
+         
           {dropdownData.map((dropdown, index) => (
             <Dropdown
               key={index}
@@ -98,8 +106,7 @@ single large indoor plant, can add personality to a room while remaining simple.
             />
           ))}
         </section>
-            </div>
-    </div>
+           
     
     </>
     

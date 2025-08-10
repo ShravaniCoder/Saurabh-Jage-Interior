@@ -7,14 +7,16 @@ import { TfiEmail } from "react-icons/tfi";
 const Contact = () => {
   return (
     <section>
-        <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
+      <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
       <section className="bg-white py-16 px-6 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {/* Phone */}
           <div className="flex flex-col items-center space-y-4">
             <BsTelephone className="text-7xl text-[#E2C14A]" />
-            <h3 className="text-sm text-gray-500 uppercase">Phone :</h3>
-            <p className="text-gray-700">
+            <h3 className="text-sm text-gray-500 uppercase font-carme-regular">
+              Phone :
+            </h3>
+            <p className="text-gray-700 font-inter">
               +91 99873 57338 <br />
             </p>
           </div>
@@ -22,8 +24,10 @@ const Contact = () => {
           {/* Address */}
           <div className="flex flex-col items-center space-y-4">
             <GrLocation className="text-7xl text-[#E2C14A]" />
-            <h3 className="text-sm text-gray-500 uppercase">Address:</h3>
-            <p className="text-gray-700">
+            <h3 className="text-sm text-gray-500 uppercase font-carme-regular">
+              Address:
+            </h3>
+            <p className="text-gray-700 font-inter">
               1311, MARATHON MILLENIUM, <br />
               LBS ROAD, BESIDE NIRMAL LIFESTYLE MALL, MULUND WEST.
             </p>
@@ -32,8 +36,12 @@ const Contact = () => {
           {/* Email */}
           <div className="flex flex-col items-center space-y-4">
             <TfiEmail className="text-7xl text-[#E2C14A]" />
-            <h3 className="text-sm text-gray-500 uppercase">E-Mail :</h3>
-            <p className="text-gray-700">contact@saurabhjagerealty.com</p>
+            <h3 className="text-sm text-gray-500 uppercase font-carme-regular">
+              E-Mail :
+            </h3>
+            <p className="text-gray-700 font-inter">
+              contact@saurabhjagerealty.com
+            </p>
           </div>
         </div>
       </section>
