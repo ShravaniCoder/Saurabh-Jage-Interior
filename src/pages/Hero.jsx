@@ -10,7 +10,7 @@ const Hero = () => {
     <HeroSection />
     <ExperienceSection />
     <Services />
-    <ProcessSection />
+   
     </>
   )
 }

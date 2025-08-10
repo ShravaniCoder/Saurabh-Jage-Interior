@@ -1,78 +1,125 @@
-import React, { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { services } from "../Data/info";
-import { Link } from "react-router-dom";
-import BannerImage from "../assets/Bannerimage.jpg";
+import bgImg from "../assets/bg-imag.jpg";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import img1 from "../assets/services/1.jpg";
+import img2 from "../assets/services/2.jpg";
+import img3 from "../assets/services/3.jpg";
+import img4 from "../assets/services/4.jpg";
+import img6 from "../assets/services/6.jpg";
+import img7 from "../assets/services/img7.jpg";
+
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 
 const Services = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
 
-
+    const swiperRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+  
+    const images = [
+      {
+        src: img1,
+        alt: "Residential Projects",
+      },
+      {
+        src: img3,
+        alt: "Bedroom Luxury Projects",
+      },
+      {
+        src: img2,
+        alt: "Luxury Modular Kitchen Designs",
+      },
+      {
+        src: img4,
+        alt: "Living Room / Lounge Room Designs",
+      },
+      {
+        src: img6,
+        alt: "Commercial Designs (Offices & Shops)",
+      },
+      {
+        src: img7,
+        alt: "Home Transformation Modules",
+      },
+    ];
   return (
     <>
-     <div>
-                    <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
-                  
-                  </div>
-    <div id="services" className="bg-[#f7f7f7] px-10 py-20">
-       
-      <div className=" px-4 lg:px-20 mx-auto mb-10">
-        <p className="text-sm text-[#d3b54a] font-semibold my-10">• OUR SERVICES</p>
-        <h2 className="text-4xl font-bold leading-snug text-black">
-          Explore Our <span className="text-[#d3b54a]">Comprehensive<br />Interior Design</span> Services
-        </h2>
-        <p className="text-gray-500 mt-4 max-w-xl">
-          We specialize in transforming visions into reality.
-        </p>
-      </div>
+      <div className="relative">
+        {/* Background Image */}
+        <img
+          src={bgImg}
+          alt=""
+          className="md:h-screen h-[55vh] w-full object-cover"
+        />
 
-      <div className=" px-4 lg:px-20 mx-auto grid md:grid-cols-2 gap-10 items-center">
-        {/* Left: Animated Image */}
-        <div className="relative rounded-2xl overflow-hidden aspect-video sm:aspect-[4/3] lg:h-[500px]">
-  <AnimatePresence mode="wait">
-    <motion.img
-      key={activeIndex}
-      src={services[activeIndex].img}
-      alt="Interior"
-      initial={{ opacity: 0, y: 20, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -20, scale: 0.98 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
-    />
-  </AnimatePresence>
+        {/* Text Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-center px-4 lg:px-20 mx-auto text-left">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-spectral-sc-regular font-bold text-white mb-4">
+              Our Services
+            </h2>
+            <p className="text-white font-montserrat font-semibold max-w-2xl mx-auto">
+              Every project we undertake speaks luxury & functionality which is
+              uniquely yours.
+            </p>
+          </div>
 
-  {/* Overlay Text */}
-  <div className="absolute bottom-4 left-4 bg-black/70 text-white text-sm p-4 rounded-xl max-w-xs z-10">
-    {services[activeIndex].title}
-  </div>
-</div>
-
-
-        {/* Right: Services List */}
-        <div className="space-y-6 z-20">
-          {services.map((service, index) => (
-            <Link
-            to={`/services/${service.id}`}
-            key={service.id}
-           
-              onMouseEnter={() => setActiveIndex(index)}
-              className={`flex justify-between items-center border-b pb-6 cursor-pointer transition duration-300 ${
-                index === activeIndex ? "text-[#d3b54a]" : ""
-              }`}
+          <div className="relative px-6 sm:px-8 lg:px-12 py-8 max-w-[1400px] mx-auto overflow-hidden flex items-center">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              loop={true}
+              centeredSlides={true}
+              slidesPerView={"auto"}
+              spaceBetween={30} // more gap between slides
+              ref={swiperRef}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              onSwiper={(swiper) => setActiveIndex(swiper.realIndex)}
+              className="!overflow-visible"
             >
-              <div className="text-lg font-semibold">
-                {index + 1} {service.title}
-              </div>
-              <ArrowRight size={20} />
-            </Link>
-            
-          ))}
+              {images.map((image, index) => (
+                <SwiperSlide
+                  key={index}
+                  style={{
+                    width: index === activeIndex ? "80%" : "75%", // keep some visible space around
+                    maxWidth: "700px",
+                    flexShrink: 0,
+                  }}
+                  className={`transition-all duration-300 ${
+                    index === activeIndex
+                      ? "z-20 scale-105"
+                      : "z-10 opacity-60 mt-4 mb-4 md:mt-8 md:mb-8"
+                  }`}
+                >
+                  <div className="relative rounded-lg overflow-hidden shadow-lg transition-all duration-300">
+                    {/* Image */}
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className={`w-full object-cover transition-all duration-300 rounded-lg
+              ${
+                index === activeIndex
+                  ? "h-[220px] sm:h-[300px] md:h-[350px] lg:h-[450px]"
+                  : "h-[200px] sm:h-[270px] md:h-[320px] lg:h-[400px]"
+              }`}
+                    />
+                    {/* Service Name Overlay */}
+                    <div className="absolute bottom-0 text-center font-cinzel-text w-full bg-black/60 text-white py-2 sm:py-3 px-2 sm:px-4 text-sm sm:text-lg font-semibold">
+                      {image.alt}
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };

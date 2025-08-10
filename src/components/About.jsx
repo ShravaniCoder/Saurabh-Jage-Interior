@@ -56,8 +56,8 @@ const ExperienceSection = () => {
               Our Offerings
             </h2>
             <p className="text-white font-montserrat font-semibold max-w-2xl mx-auto">
-              Every project we undertake speaks luxury & functionality which is
-              uniquely yours.
+              Our objective is to precisely personalize designs to your specific
+              lifestyle and interests.
             </p>
           </div>
 
