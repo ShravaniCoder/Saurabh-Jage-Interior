@@ -18,10 +18,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Quick Links */}
         <div>
-          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide">
+          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide font-spectral-sc-regular">
             Quick Links
           </h3>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-sm font-inter">
             {[
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
@@ -43,10 +43,10 @@ const Footer = () => {
 
         {/* Head Office */}
         <div>
-          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide">
+          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide font-spectral-sc-regular">
             Head Office
           </h3>
-          <div className="text-sm space-y-3">
+          <div className="text-sm space-y-3 font-inter">
             <p>
               <span className="font-semibold uppercase">Address: </span>
               1311, Marathon Millenium,
@@ -67,7 +67,7 @@ const Footer = () => {
         {/* Social Media */}
         <div className="flex flex-col items-start">
           {/* Heading */}
-          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide">
+          <h3 className="uppercase font-semibold mb-6 text-lg tracking-wide font-spectral-sc-regular">
             Connect With Us
           </h3>
 
@@ -109,7 +109,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+      <div className="border-t border-gray-700 font-spectral-sc-regular mt-10 pt-6 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} Saurabh Jage Interiors. All rights
         reserved.
       </div>
