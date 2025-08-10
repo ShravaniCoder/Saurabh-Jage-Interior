@@ -7,7 +7,7 @@ import { TfiEmail } from "react-icons/tfi";
 const Contact = () => {
   return (
     <section>
-      <img src={BannerImage} alt="" className="object-cover w-full h-[60vh] " />
+      <img src={BannerImage} alt="" className="object-cover w-full h-[55vh] " />
       <section className="bg-white py-16 px-6 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {/* Phone */}
