@@ -13,6 +13,7 @@ import img7 from "../assets/services/img7.jpg";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { NavLink } from "react-router-dom";
 
 const Services = () => {
   const swiperRef = useRef(null);
@@ -33,8 +34,8 @@ const Services = () => {
         {/* Background Image */}
         <img
           src={bgImg}
-          alt=""
-          className="md:h-screen h-[55vh] w-full object-cover"
+          alt="BgImg"
+          className="md:h-screen  h-[80vh] w-full object-cover"
         />
 
         {/* Text Overlay */}
@@ -50,6 +51,8 @@ const Services = () => {
           </div>
 
           <div className="relative px-6 sm:px-8 lg:px-12 py-8 max-w-[1400px] mx-auto overflow-hidden flex items-center">
+            <NavLink
+            to="/services" >
             <Swiper
               modules={[Navigation, Autoplay]}
               loop={true}
@@ -112,6 +115,7 @@ const Services = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            </NavLink>
           </div>
         </div>
       </div>

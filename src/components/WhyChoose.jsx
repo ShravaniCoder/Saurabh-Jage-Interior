@@ -3,12 +3,12 @@ import BgImage from "../assets/choose.jpg"; // Replace with your image path
 
 const WhyChoose = () => {
   return (
-    <section className="relative w-full h-[80vh] md:min-h-screen  overflow-hidden">
+    <section className="relative w-full h-[90vh] md:min-h-screen  overflow-hidden">
       {/* Background Image */}
       <img
         src={BgImage}
         alt="Why Choose Us Background"
-        className="absolute inset-0 w-full h-[80vh]  md:h-full object-cover"
+        className="absolute inset-0 w-full h-[90vh]  md:h-full object-cover"
       />
 
       {/* Overlay */}

@@ -50,11 +50,11 @@ const Services = () => {
         "Elegant Wall Treatments",
       ],
       content:
-        "We believe that one's bedroom is more than simply a place to sleep; it is a personal sanctuary for rejuvenation. Our bedroom designs combine comfort, style, and functionality in perfect harmony, creating spaces that reflect your personality and lifestyle.",
+        `We believe that one's bedroom is more than simply a place to sleep; it also serves as a place to rejuvenate. It should be a tranquil refuge that expresses your personality, complements your lifestyle, and encourages genuine relaxation. We create bedrooms for you that integrate comfort, style, and functionality in perfect harmony.`,
     },
     {
       image: img4,
-      name: "Living Room / Lounge Design",
+      name: "Living Room",
       points: [
         "Custom Layouts: Thoughtful space planning for your needs & lifestyle",
         "Color & Material Consultation: Palettes & textures to reflect your personality",
@@ -64,7 +64,10 @@ const Services = () => {
         "Artwork & Accent Walls to elevate the space",
       ],
       content:
-        "Your living room is the heart of your home — where you entertain guests, relax with family, and enjoy peaceful moments. We design spaces with elegance, warmth, and personality, ensuring your living area is both functional and visually captivating.",
+        `Your living room is the space that gives your life vitality and color. It's where life happens,
+from casual evenings and entertaining friends to peaceful mornings with coffee. We create 
+your living area with a touch of elegance and peace. We believe that expressive homes are
+visually appealing.`,
     },
     {
       image: img6,
@@ -114,6 +117,7 @@ const Services = () => {
 
       <section>
         <div className="grid grid-cols-1 md:grid-cols-2 px-6 my-20 md:px-10 lg:px-20 gap-8">
+
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -123,6 +127,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
+              
               <img
                 src={service.image}
                 alt={service.name}

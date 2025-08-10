@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
         <Navbar />
         <EnquiryPopup />
         <div className="flex-grow">
