@@ -8,22 +8,23 @@ const EnquiryPopup = () => {
   const intervalRef = useRef(null);
   const formRef = useRef();
 
-  useEffect(() => {
-    if (!isFormSubmitted) {
-      startInterval();
+useEffect(() => {
+  if (!isFormSubmitted) {
+    startInterval();
+  }
+
+  return () => clearInterval(intervalRef.current);
+}, [isFormSubmitted]);
+
+const startInterval = () => {
+  clearInterval(intervalRef.current);
+  intervalRef.current = setInterval(() => {
+    if (!isFillingForm) {
+      setIsVisible(true);
     }
+  }, 60000); // 🔹 Changed from 20000 (20 sec) to 60000 (1 min)
+};
 
-    return () => clearInterval(intervalRef.current);
-  }, [isFormSubmitted]);
-
-  const startInterval = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      if (!isFillingForm) {
-        setIsVisible(true);
-      }
-    }, 20000); // UPDATED TO 20 SECONDS
-  };
 
   const handleClose = () => {
     setIsVisible(false);
@@ -92,10 +93,14 @@ const EnquiryPopup = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            <h2 className="text-2xl font-bold uppercase text-gray-800 font-spectral-sc-regular mb-6 text-center">
               Start Your Project
             </h2>
-            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 font-inter"
+            >
               <input
                 name="data[Name]"
                 type="text"
