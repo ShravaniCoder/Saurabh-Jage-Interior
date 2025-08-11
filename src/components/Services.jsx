@@ -1,8 +1,8 @@
-import bgImg from "../assets/bg-imag.jpg";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 import img1 from "../assets/services/1.jpg";
 import img2 from "../assets/services/2.jpg";
@@ -17,109 +17,105 @@ import { NavLink } from "react-router-dom";
 
 const Services = () => {
   const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   const images = [
     { src: img1, alt: "Residential Projects" },
     { src: img3, alt: "Bedroom Luxury Projects" },
     { src: img2, alt: "Luxury Modular Kitchen Designs" },
-    { src: img4, alt: "Living Room / Lounge Room Designs" },
-    { src: img6, alt: "Commercial Designs (Offices & Shops)" },
+    { src: img4, alt: "Living Room " },
+    { src: img6, alt: "Commercial Designs " },
     { src: img7, alt: "Home Transformation Modules" },
   ];
 
   return (
-    <>
-      <div className="relative">
-        {/* Background Image */}
-        <img
-          src={bgImg}
-          alt="BgImg"
-          className="md:h-screen  h-[80vh] w-full object-cover"
-        />
+    <section className="h-screen">
+      <div className="flex flex-col justify-center px-4 lg:px-20 mx-auto text-left">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl font-spectral-sc-regular font-bold text-[#E0C65A] mb-4">
+            Our Services
+          </h2>
+          <p className="text-[#E0C65A] font-montserrat font-semibold max-w-2xl mx-auto">
+            Every project we undertake speaks luxury & functionality which is
+            uniquely yours.
+          </p>
+        </div>
 
-        {/* Text Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center px-4 lg:px-20 mx-auto text-left">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-spectral-sc-regular font-bold text-white mb-4">
-              Our Services
-            </h2>
-            <p className="text-white font-montserrat font-semibold max-w-2xl mx-auto">
-              Every project we undertake speaks luxury & functionality which is
-              uniquely yours.
-            </p>
-          </div>
+        <div className="relative px-6 sm:px-8 lg:px-12 py-8 max-w-[1400px] mx-auto overflow-visible flex items-center">
+          {/* Left Arrow */}
+          <button
+            ref={prevRef}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black transition"
+          >
+            <MdKeyboardArrowLeft size={30} />
+          </button>
 
-          <div className="relative px-6 sm:px-8 lg:px-12 py-8 max-w-[1400px] mx-auto overflow-hidden flex items-center">
-            <NavLink
-            to="/services" >
+          <NavLink to="/services" className="w-full">
             <Swiper
               modules={[Navigation, Autoplay]}
               loop={true}
-              centeredSlides={true}
-              slidesPerView={"auto"}
-              spaceBetween={30}
               ref={swiperRef}
               autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
+                delay: 3000,
+                disableOnInteraction: false, // keeps autoplay after manual nav
               }}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-              onSwiper={(swiper) => setActiveIndex(swiper.realIndex)}
-              className="!overflow-visible"
+              speed={700}
+              slidesPerView={1}
+              spaceBetween={0}
+              className="w-full"
+              onInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }}
             >
-              {images.map((image, index) => (
-                <SwiperSlide
-                  key={index}
-                  style={{
-                    width: index === activeIndex ? "80%" : "75%",
-                    maxWidth: "700px",
-                    flexShrink: 0,
-                  }}
-                  className={`transition-all duration-300 ${
-                    index === activeIndex
-                      ? "z-20 scale-105"
-                      : "z-10 opacity-60 mt-4 mb-4 md:mt-8 md:mb-8"
-                  }`}
-                >
+              {images.map((image, idx) => (
+                <SwiperSlide key={idx}>
                   <motion.div
-                    className="relative rounded-lg overflow-hidden shadow-lg"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="relative rounded-lg overflow-hidden shadow-lg w-full"
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.02 }}
                   >
-                    {/* Image */}
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className={`w-full object-cover transition-all duration-300 rounded-lg
-                        ${
-                          index === activeIndex
-                            ? "h-[220px] sm:h-[300px] md:h-[350px] lg:h-[450px]"
-                            : "h-[200px] sm:h-[270px] md:h-[320px] lg:h-[400px]"
-                        }`}
+                      className="
+                        w-full
+                        h-[250px] sm:h-[350px] md:h-[450px]
+                        lg:h-[600px] xl:h-[700px]
+                        object-cover
+                      "
                     />
-
-                    {/* Service Name Overlay */}
-                    <motion.div
-                      className="absolute bottom-0 text-center font-cinzel-text w-full bg-black/60 text-white py-2 sm:py-3 px-2 sm:px-4 text-sm sm:text-lg font-semibold"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.2, duration: 0.4 }}
-                    >
+                    <div className="
+                      absolute bottom-0 left-0 right-0
+                      bg-black/60 text-white
+                      py-3 sm:py-4 md:py-5
+                      text-base sm:text-lg md:text-xl lg:text-2xl
+                      font-semibold text-center font-carme-regular
+                    ">
                       {image.alt}
-                    </motion.div>
+                    </div>
                   </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
-            </NavLink>
-          </div>
+          </NavLink>
+
+          {/* Right Arrow */}
+          <button
+            ref={nextRef}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black transition"
+          >
+            <MdKeyboardArrowRight size={30} />
+          </button>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -28,12 +28,12 @@ const ExperienceSection = () => {
       <div className="absolute inset-0 bg-[url('/wireframe-bg.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
 
       <div className="relative z-10  text-center">
-        <div className="mb-3 text-sm font-bold font-spectral-sc-regular text-[#d3b54a] tracking-wide uppercase">
+        <div className="mb-3 text-sm font-bold font-spectral-sc-regular text-[#E0C65A] tracking-wide uppercase">
           • Who we are •
         </div>
         <h2 className="text-3xl font-nata-sans md:text-5xl font-bold text-gray-900">
-          “<span className="text-[#d3b54a]">Marbelling </span>Homes,
-          <span className="text-[#d3b54a]"> Marbelling </span>Lives”
+          “<span className="text-[#E0C65A]">Marbelling </span>Homes,
+          <span className="text-[#E0C65A]"> Marvelling </span>Lives”
         </h2>
         <p className="mt-5 px-4 font-montserrat font-medium text-gray-600 max-w-2xl mx-auto">
           Saurabh Jage Interiors is a dynamic and rapidly expanding interior
@@ -47,7 +47,7 @@ const ExperienceSection = () => {
         <div
           className="mt-20 py-16 px-4 md:px-10 lg:px-24"
           style={{
-            background: `linear-gradient(to bottom, #D6B246 50%, white 50%)`,
+            background: `linear-gradient(to bottom, #E0C65A 50%, white 50%)`,
           }}
         >
           {/* Text */}
@@ -61,25 +61,28 @@ const ExperienceSection = () => {
             </p>
           </div>
 
+        
           {/* Services Grid */}
-          <div className="mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all"
-              >
-                <div className="flex justify-between items-center gap-3 mb-16">
-                  <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
-                    {service.title}
-                  </h3>
-                </div>
-                <hr className="text-gray-300" />
-                <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
-                  {service.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+<div className="mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 cursor-pointer md:grid-cols-3 lg:grid-cols-4 text-left">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all transform hover:scale-105 duration-300 ease-out"
+    >
+      <div className="flex justify-between items-center gap-3 mb-16">
+        <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
+          {service.title}
+        </h3>
+      </div>
+      <hr className="text-gray-300" />
+      <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
+        {service.desc}
+      </p>
+    </div>
+  ))}
+</div>
+
+
         </div>
       </div>
     </div>

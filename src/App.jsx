@@ -11,6 +11,8 @@ import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
 import ScrollToTop from "./components/ScrollToTop";
+import DigitalServices from "./pages/DigitalServices";
+import ContactDigi from "./components/ContactDigi";
 
 
 
@@ -32,12 +34,12 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blogs" element={<Blog />} />
-           
+            <Route path="/digiservices" element={<DigitalServices />} />
+            <Route path="/digicontact" element={<ContactDigi />} />
           </Routes>
         </div>
         <Footer />
       </div>
-     
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { steps } from "../Data/info"; 
-import Banner from "../assets/processbanner.jpg";
+import Banner from "../assets/process.jpg";
 const Process = () => {
   return (
     <>

@@ -38,33 +38,33 @@ const Navbar = () => {
         <ul className="hidden lg:flex gap-7 font-spectral-sc-regular items-center cursor-pointer">
           <NavLink
             to="/"
-            className="uppercase font-semibold hover:text-[#d3b54a]"
+            className="uppercase font-semibold hover:text-[#E0C65A]"
           >
             Home
           </NavLink>
           <NavLink
             to="/services"
             onClick={() => setMenuOpen(false)}
-            className="uppercase font-semibold hover:text-[#d3b54a]"
+            className="uppercase font-semibold hover:text-[#E0C65A]"
           >
             Services
           </NavLink>
           <NavLink
             to="/process"
             onClick={() => setMenuOpen(false)}
-            className="uppercase font-semibold hover:text-[#d3b54a]"
+            className="uppercase font-semibold hover:text-[#E0C65A]"
           >
             Process
           </NavLink>
           <NavLink
             to="/blogs"
-            className="uppercase font-semibold hover:text-[#d3b54a]"
+            className="uppercase font-semibold hover:text-[#E0C65A]"
           >
             Blogs
           </NavLink>
           <NavLink
             to="/contact"
-            className="uppercase font-semibold hover:text-[#d3b54a]"
+            className="uppercase font-semibold hover:text-[#E0C65A]"
           >
             Contact Us
           </NavLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
           <button
-            className="p-3 rounded-full bg-black/50 text-white hover:bg-[#d3b54a] text-2xl"
+            className="p-3 rounded-full bg-black/50 text-white hover:bg-[#E0C65A] text-2xl"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <RxCross2 /> : <PiDotsNineBold />}

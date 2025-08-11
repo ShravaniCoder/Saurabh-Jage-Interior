@@ -24,7 +24,7 @@ const Dropdown = ({ title, content, isOpen, onClick }) => {
               {content.map((item, index) => (
                 <li
                   key={index}
-                  className="answer bg-transparent ml-2 mb-2 font-mono text-gray-600"
+                  className="answer bg-transparent ml-2 mb-2  text-gray-600"
                 >
                   {item}
                 </li>
