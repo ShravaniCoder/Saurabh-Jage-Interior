@@ -30,7 +30,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="h-screen">
+    <section className="md:h-screen h-[60vh]">
       <div className="flex flex-col justify-center px-4 lg:px-20 mx-auto text-left">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-spectral-sc-regular font-bold text-[#E0C65A] mb-4">
