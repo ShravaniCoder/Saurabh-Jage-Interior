@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "../assets/tilesbanner.png";
 
 const services = [
   {
@@ -44,46 +45,44 @@ const ExperienceSection = () => {
         </p>
 
         {/* Services Section */}
-        <div
-          className="mt-20 py-16 px-4 md:px-10 lg:px-24"
-          style={{
-            background: `linear-gradient(to bottom, #E0C65A 50%, white 50%)`,
-          }}
-        >
-          {/* Text */}
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-spectral-sc-regular font-bold text-white mb-4">
-              Our Offerings
-            </h2>
-            <p className="text-white font-montserrat font-semibold max-w-2xl mx-auto">
-              Our objective is to precisely personalize designs to your specific
-              lifestyle and interests.
-            </p>
-          </div>
-
-        
-          {/* Services Grid */}
-<div className="mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 cursor-pointer md:grid-cols-3 lg:grid-cols-4 text-left">
-  {services.map((service, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all transform hover:scale-105 duration-300 ease-out"
-    >
-      <div className="flex justify-between items-center gap-3 mb-16">
-        <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
-          {service.title}
-        </h3>
-      </div>
-      <hr className="text-gray-300" />
-      <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
-        {service.desc}
-      </p>
-    </div>
-  ))}
-</div>
+       <div
+  className="relative mt-20 py-16 px-4 md:px-10 lg:px-24 bg-cover bg-center"
+  style={{
+    backgroundImage: `url(${bgImage})`,
+  }}
+>
 
 
+  {/* Content */}
+  <div className="relative text-center mb-10 z-10">
+    <h2 className="text-4xl font-spectral-sc-regular font-bold text-[#E0C65A] mb-4">
+      Our Offerings
+    </h2>
+    <p className="text-[#E0C65A] font-montserrat font-semibold max-w-2xl mx-auto">
+      Our objective is to precisely personalize designs to your specific lifestyle and interests.
+    </p>
+  </div>
+
+  {/* Services Grid */}
+  <div className="relative mt-14 grid gap-6 grid-cols-1 sm:grid-cols-2 cursor-pointer md:grid-cols-3 lg:grid-cols-4 text-left z-10">
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-2xl p-10 shadow-sm hover:shadow-lg transition-all transform hover:scale-105 duration-300 ease-out"
+      >
+        <div className="flex justify-between items-center gap-3 mb-16">
+          <h3 className="text-3xl font-carme-regular font-bold text-gray-900">
+            {service.title}
+          </h3>
         </div>
+        <hr className="text-gray-300" />
+        <p className="text-sm font-inter text-gray-600 leading-relaxed text-left mt-5">
+          {service.desc}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </div>
   );

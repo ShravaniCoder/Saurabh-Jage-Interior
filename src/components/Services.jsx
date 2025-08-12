@@ -42,78 +42,82 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="relative px-6 sm:px-8 lg:px-12 py-8 max-w-[1400px] mx-auto overflow-visible flex items-center">
-          {/* Left Arrow */}
-          <button
-            ref={prevRef}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black transition"
-          >
-            <MdKeyboardArrowLeft size={30} />
-          </button>
+       {/* Slider */}
+<div className="relative w-full px-0 sm:px-6 lg:px-12 py-4 sm:py-8 flex items-center">
+  {/* Left Arrow */}
+  <button
+    ref={prevRef}
+    className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-1.5 sm:p-2 rounded-full hover:bg-black transition"
+  >
+    <MdKeyboardArrowLeft size={22} className="sm:size-[30px]" />
+  </button>
 
-          <NavLink to="/services" className="w-full">
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              loop={true}
-              ref={swiperRef}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false, // keeps autoplay after manual nav
-              }}
-              speed={700}
-              slidesPerView={1}
-              spaceBetween={0}
-              className="w-full"
-              onInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }}
+  <NavLink to="/services" className="w-full">
+    <Swiper
+      modules={[Navigation, Autoplay]}
+      loop={true}
+      ref={swiperRef}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      speed={700}
+      slidesPerView={1}
+      spaceBetween={0}
+      className="w-full"
+      onInit={(swiper) => {
+        swiper.params.navigation.prevEl = prevRef.current;
+        swiper.params.navigation.nextEl = nextRef.current;
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }}
+    >
+      {images.map((image, idx) => (
+        <SwiperSlide key={idx}>
+          <motion.div
+            className="relative rounded-lg overflow-hidden shadow-lg w-full"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="
+                w-full block
+                h-[200px] xs:h-[250px] sm:h-[350px] md:h-[450px]
+                lg:h-[600px] xl:h-[700px]
+                object-cover rounded-lg 
+              "
+            />
+            <div
+              className="
+                absolute bottom-0 left-0 right-0
+                bg-black/60 text-white
+                py-2 sm:py-3 md:py-4
+                text-xs sm:text-base md:text-xl lg:text-2xl
+                font-semibold text-center font-carme-regular
+              "
             >
-              {images.map((image, idx) => (
-                <SwiperSlide key={idx}>
-                  <motion.div
-                    className="relative rounded-lg overflow-hidden shadow-lg w-full"
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="
-                        w-full
-                        h-[250px] sm:h-[350px] md:h-[450px]
-                        lg:h-[600px] xl:h-[700px]
-                        object-cover
-                      "
-                    />
-                    <div className="
-                      absolute bottom-0 left-0 right-0
-                      bg-black/60 text-white
-                      py-3 sm:py-4 md:py-5
-                      text-base sm:text-lg md:text-xl lg:text-2xl
-                      font-semibold text-center font-carme-regular
-                    ">
-                      {image.alt}
-                    </div>
-                  </motion.div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </NavLink>
+              {image.alt}
+            </div>
+          </motion.div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </NavLink>
 
-          {/* Right Arrow */}
-          <button
-            ref={nextRef}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black transition"
-          >
-            <MdKeyboardArrowRight size={30} />
-          </button>
-        </div>
+  {/* Right Arrow */}
+  <button
+    ref={nextRef}
+    className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-1.5 sm:p-2 rounded-full hover:bg-black transition"
+  >
+    <MdKeyboardArrowRight size={22} className="sm:size-[30px]" />
+  </button>
+</div>
+
       </div>
     </section>
   );
