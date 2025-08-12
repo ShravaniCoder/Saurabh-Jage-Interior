@@ -59,7 +59,7 @@ const Footer = () => {
             </p>
             <p>
               <span className="font-semibold uppercase">E-mail: </span>
-              contact@saurabhjagerealty.com
+              contact@saurabhjageinterior.com
             </p>
           </div>
         </div>
@@ -110,7 +110,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="border-t border-gray-700 font-spectral-sc-regular mt-10 pt-6 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Saurabh Jage Interiors. All rights
+        &copy; {new Date().getFullYear()} Saurabh Jage Interior. All rights
         reserved.
       </div>
       {/* Popup */}
