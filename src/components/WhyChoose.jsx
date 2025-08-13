@@ -1,5 +1,5 @@
 import React from "react";
-import BgImage from "../assets/choose.jpg"; // Replace with your image path
+import BgImage from "../assets/chhose.jpg"; // Replace with your image path
 
 const WhyChoose = () => {
   return (

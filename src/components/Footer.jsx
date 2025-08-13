@@ -88,18 +88,24 @@ const Footer = () => {
           <div className="flex gap-4 my-6 text-2xl">
             <a
               href="#"
+                target="_blank"
+                  rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors duration-200"
             >
               <FaFacebook />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/saurabhjageinterior?utm_source=qr&igsh=ZGgybnNmNXkxYWdi"
+                target="_blank"
+                  rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors duration-200"
             >
               <FaInstagram />
             </a>
             <a
               href="#"
+                target="_blank"
+                  rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors duration-200"
             >
               <FaLinkedin />
