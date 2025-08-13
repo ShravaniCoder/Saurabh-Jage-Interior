@@ -51,11 +51,11 @@ const Footer = () => {
               <span className="font-semibold uppercase">Address: </span>
               1311, Marathon Millenium,
               <br />
-              LBS Road, Beside Nirmal Lifestyle Mall, Mulund West.
+              LBS Road, Beside Nirmal Lifestyle Mall, Mulund West, Mumbai(400080).
             </p>
             <p>
               <span className="font-semibold uppercase">Phone: </span>
-              +91 99873 57338
+             +91 22-45199483
             </p>
             <p>
               <span className="font-semibold uppercase">E-mail: </span>

@@ -17,7 +17,7 @@ const Contact = () => {
               Phone :
             </h3>
             <p className="text-gray-700 font-inter">
-              +91 99873 57338 <br />
+              +91 22-45199483 <br />
             </p>
           </div>
 
@@ -29,7 +29,7 @@ const Contact = () => {
             </h3>
             <p className="text-gray-700 font-inter">
               1311, MARATHON MILLENIUM, <br />
-              LBS ROAD, BESIDE NIRMAL LIFESTYLE MALL, MULUND WEST.
+              LBS ROAD, BESIDE NIRMAL LIFESTYLE MALL, MULUND WEST, Mumbai(400080).
             </p>
           </div>
 
